@@ -1,0 +1,22 @@
+
+
+    _changeAccounts: function() {
+        this.model.on("change:account_name", this.changeDropdownHandler, this);
+    },
+
+    changeDropdownHandler: function(){
+     console.log("Am from changeDropdownHandler");
+        var self = this;
+        console.log(self.name,"Am from changeDropdownHandler and Name");
+        if (self.name === 'dropdown_sub_name_c') {
+            var newOptions = {
+          '':'',
+                'John': 'John',
+                'Glen':'Glen'
+            };
+            self.items = newOptions;
+            self.render();
+            console.log(self.items,"Am from changeDropdownHandler as Items");
+        }
+        console.log(self,"Am from changeDropdownHandler as self values...");
+    }

@@ -10,6 +10,7 @@ $hook_array['before_save'][] = Array(77, 'updateGeocodeInfo', 'modules/Contacts/
 $hook_array['after_save'] = Array(); 
 $hook_array['after_save'][] = Array(1, 'Update Portal', 'modules/Contacts/updatePortal.php','updatePortal', 'updateUser'); 
 $hook_array['after_save'][] = Array(77, 'updateRelatedMeetingsGeocodeInfo', 'modules/Contacts/ContactsJjwg_MapsLogicHook.php','ContactsJjwg_MapsLogicHook', 'updateRelatedMeetingsGeocodeInfo'); 
+$hook_array['before_save'][] = Array(2, 'Contacts push name', 'custom/modules/Contacts/before_save_class.php','before_save_class', 'before_save_method');
 
 
 
