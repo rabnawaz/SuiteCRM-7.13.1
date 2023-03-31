@@ -18,6 +18,20 @@ function addLineItemHandlers() {
   $('#lineItemAdd').append($html);
 
 }
-function removeLineItemHandlers(elem){
-  elem.parentElement.parentElement.remove();
+function removeLineItemHandlers(el){
+  console.log("delete item kro");
+  $.ajax({
+    url : 'custom/modules/Accounts/LineItems/delete_item.php',
+    dataType : 'json',
+    method: 'DELETE',
+    data : {
+         lineItemID : 1
+    }, 
+    success : function(response) {
+         // remove line?
+         $(el).parent().remove();
+         alert(response.result);
+    }
+  })
+  //el.parentElement.parentElement.remove();
 }

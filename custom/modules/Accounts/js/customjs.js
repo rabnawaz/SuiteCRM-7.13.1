@@ -9,7 +9,7 @@ function getUsers() {
        // data: data,
         success: function (data) {
             //console.log(data);
-            //JSON.stringify(data);
+            JSON.stringify(data);
             if (data) {
                 console.log("this is user response data");
                 //alert("L'utilisateur a déjà d'autres rendez-vous de prévus sur cette plage horaire!");

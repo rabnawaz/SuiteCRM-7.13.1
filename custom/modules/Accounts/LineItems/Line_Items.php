@@ -31,5 +31,24 @@ function diplayLineItems($focus, $field, $value, $view)
     $ss->assign('name',$name);
     $ss->assign('fruits',$fruits);
 
+    $sql = "SELECT * FROM LineItem";
+    $result = $GLOBALS['db']->query($sql);
+
+    $lineItem = [];
+
+    while($row = $GLOBALS['db']->fetchByAssoc($result)){
+        $lineItem[] = [
+            'itemName' => $row['LineItemName'],
+            'itemDes' => $row['LineItemDes']
+        ];
+    };
+
+    $ss->assign("items", $lineItem);
+    echo json_encode($lineItem);
+
+    
+    $deleteQuery = "'DELETE FROM LineItem WHERE LineItemID=1";
+    //echo '{result:"done"}';
+
     return  $ss->fetch('custom/modules/Accounts/LineItems/lineItem.tpl');
 }

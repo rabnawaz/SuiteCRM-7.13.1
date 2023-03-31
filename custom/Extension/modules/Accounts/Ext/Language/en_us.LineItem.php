@@ -3,4 +3,6 @@
 $mod_strings['LBL_LINE_ITEMS'] = 'Line Items';
 
 
-$mod_strings['LBL_BILLING_ADDRESS_FAX'] = 'Billing Address Fax:';
+// $mod_strings['LBL_LINE_ACC_RElATE_FIELD'] = 'Account Relate Field';
+
+
